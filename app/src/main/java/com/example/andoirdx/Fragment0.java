@@ -9,6 +9,7 @@ import androidx.navigation.Navigation;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Fragment0 extends Fragment {
 
@@ -24,7 +25,9 @@ public class Fragment0 extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_Fragment0_to_Fragment1);
+                Bundle bundle = new Bundle();
+                bundle.putString("key", "from Fragment0");
+                Navigation.findNavController(view).navigate(R.id.action_Fragment0_to_Fragment1, bundle);
             }
         });
     }

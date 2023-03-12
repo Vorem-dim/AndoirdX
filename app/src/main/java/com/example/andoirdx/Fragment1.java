@@ -9,6 +9,7 @@ import androidx.navigation.Navigation;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Fragment1 extends Fragment {
 
@@ -19,6 +20,8 @@ public class Fragment1 extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        Toast.makeText(getContext(), getArguments().getString("key"), Toast.LENGTH_SHORT).show();
 
         Button button = view.findViewById(R.id.Button);
         button.setOnClickListener(new View.OnClickListener() {
